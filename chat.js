@@ -39,8 +39,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 console.log(app);
-// console.log(dateFns.formatRelative(dateFns.subDays(new Date(), 3), new Date())
-//       );
 
 const analytics = getAnalytics(app);
 
@@ -48,21 +46,6 @@ const db = getFirestore(app)
 
 
 
-// const col_reff = collection(db,'ID_one')
-// console.log(col_reff);
-
-// const alovelaceDocumentRef = doc(db, 'ID_one/Eo4TFqqN5LXJbmAeZ7mi');
-// console.log(alovelaceDocumentRef);
-
-
-// const alovelaceDocumentRe = doc(db, "ID_one","Eo4TFqqN5LXJbmAeZ7mi");
-// console.log(alovelaceDocumentRe);
-
-  
-// getDocs(query(col_reff)).then((snapshot)=>{
-//     console.log('herrrrr');
-//     console.log(snapshot.docs[0]._document.data.value.mapValue.fields);
-// }) 
 
 
 function timestamp() {
@@ -102,9 +85,7 @@ class Chatroom{
     } 
     getChats(callback){
 
-        // let q = query(this.chats, orderBy("name"))
-        // console.log(q);
-        console.log("kffkfkf");
+
 
         let qi = query(collection(db, 'chat'),orderBy("created_at"),where("room", "==", this.room ))  
         this.unsub= this.chats
@@ -136,7 +117,6 @@ class Chatroom{
         this.room = room;
         console.log('room updated') 
         if (this.unsub) {
-            //if u dont want the value to be null from the start
             this.unsub;
             console.log(this.unsub);
             
@@ -146,21 +126,6 @@ class Chatroom{
 }
 
 
-// setTimeout(() => {
-//     chatroom.updateRoom('gaming');
-//     chatroom.updateName('Yoshi');
-//     chatroom.getChats((data)=>{
-//         console.log(data);
-    
-//     });
-//     chatroom.addChat('hello');
-    
-// }, 8000);
 
-
-
-// chatroom.addChat('hello everyone')
-// .then(()=>console.log('chat added'))
-// .catch((err)=>console.log(err))
 
 export{Chatroom}
