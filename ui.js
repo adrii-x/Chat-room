@@ -3,8 +3,7 @@
 
 //    anything related to <list>
 import { formatDistanceToNow } from "https://unpkg.com/date-fns/formatDistanceToNow.js";
-// const { formatDistanceToNow } = require("date-fns");
-// import { formatDistanceToNow } from "date-fns";
+
 
 let date;
 class ChatUI{
@@ -31,12 +30,6 @@ class ChatUI{
             {addSuffix: true}
           )
         console.log(date);
-        // console.log(Date(2016, 0, 1));     
-        // console.log(b);
-        console.log("herrre");
-        // const when = formatDistanceToNow(
-        //     data.created_at.toDate(),{addSuffix:true}
-        // );
         const html = `
             <li class='list-group-item'>
                <span class='username'>${data.username}</span> 
